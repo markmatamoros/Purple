@@ -1,0 +1,84 @@
+#N canvas 253 371 340 249 10;
+#X text 173 73 Gain 1;
+#X text 227 73 Gain 2;
+#X text 70 73 Freq;
+#X text 118 73 Depth;
+#X obj 14 9 bng 15 250 50 0 play empty empty 17 7 0 10 -262144 -1 -1
+;
+#X text 89 48 TREMOLO;
+#X obj 75 9 bng 15 250 50 0 stop empty empty 17 7 0 10 -262144 -1 -1
+;
+#X text 32 8 Play;
+#X text 93 8 Stop;
+#X obj 78 103 vsl 15 90 0 25 0 0 freq freq empty 0 -9 0 10 -262144
+-1 -1 2400 1;
+#X obj 128 103 vsl 15 90 0 10 0 0 depth depth empty 0 -9 0 10 -262144
+-1 -1 4850 1;
+#X obj 187 103 vsl 15 90 0 10 0 0 gain1 gain1 empty 0 -9 0 10 -262144
+-1 -1 3700 1;
+#X obj 238 103 vsl 15 90 0 10 0 0 gain2 gain2 empty 0 -9 0 10 -262144
+-1 -1 5900 1;
+#X text 188 47 DISTORTION;
+#X obj 298 103 vsl 15 90 0 1 0 0 dac output empty 0 -9 0 10 -262144
+-1 -1 7650 1;
+#X text 288 73 OUTPUT;
+#X obj 18 103 vsl 15 90 0 1 0 0 input input empty 0 -9 0 10 -262144
+-1 -1 8250 1;
+#X text 9 73 INPUT;
+#N canvas 0 22 323 137 (subpatch) 0;
+#X obj 6 69 purple~, f 44;
+#N canvas 490 153 468 168 (subpatch) 0;
+#X obj 17 130 outlet~;
+#X msg 17 71 open bass.wav;
+#X msg 111 71 start;
+#X msg 156 71 stop;
+#X obj 17 101 readsf~;
+#X obj 16 42 t b b;
+#X obj 91 102 t b b;
+#X obj 267 16 loadbang;
+#X obj 16 16 r play;
+#X obj 66 16 r stop;
+#X msg 267 41 \; pd dsp 1 \; input 0.5 \; freq 12.5 \; depth 5 \; gain1
+5 \; gain2 5 \; output 0.5;
+#X text 324 16 Initialize parameters;
+#X text 118 16 Loop audio file;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 4 1 6 0;
+#X connect 5 0 2 0;
+#X connect 5 1 1 0;
+#X connect 6 0 2 0;
+#X connect 6 1 1 0;
+#X connect 7 0 10 0;
+#X connect 8 0 5 0;
+#X connect 9 0 3 0;
+#X restore 6 12 pd;
+#N canvas 0 22 156 135 (subpatch) 0;
+#X obj 6 11 inlet~;
+#X obj 6 89 dac~;
+#X obj 7 53 *~;
+#X obj 59 11 r dac;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 0 1 1;
+#X connect 3 0 2 1;
+#X restore 6 96 pd;
+#X obj 35 42 r input;
+#X obj 85 42 r freq;
+#X obj 129 42 r depth;
+#X obj 179 42 r gain1;
+#X obj 229 42 r gain2;
+#X text 35 14 Handle sound file playback and intialization;
+#X text 37 97 Handle output to DAC;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 0 1;
+#X connect 4 0 0 2;
+#X connect 5 0 0 3;
+#X connect 6 0 0 4;
+#X connect 7 0 0 5;
+#X restore 18 221 pd;
+#X text 257 5 P U R P L E;
+#X text 52 222 Subpatch containing purple~;

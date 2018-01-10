@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AudioComponents</key>
+	<array>
+		<dict>
+			<key>description</key>
+			<string>Purple Effects Processor</string>
+			<key>factoryFunction</key>
+			<string>purpleAUFactory</string>
+			<key>manufacturer</key>
+			<string>Manu</string>
+			<key>name</key>
+			<string>markmatamoros: Purple</string>
+			<key>subtype</key>
+			<string>mam</string>
+			<key>type</key>
+			<string>aumf</string>
+			<key>version</key>
+			<integer>65536</integer>
+		</dict>
+	</array>
+	<key>BuildMachineOSBuild</key>
+	<string>15B42</string>
+	<key>CFBundleExecutable</key>
+	<string>purple</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.markmatamoros.purple</string>
+	<key>CFBundleName</key>
+	<string>Purple</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.0</string>
+	<key>CFBundleSignature</key>
+	<string>PTul</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>MacOSX</string>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1.0.0</string>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>7B1005</string>
+	<key>DTPlatformVersion</key>
+	<string>GM</string>
+	<key>DTSDKBuild</key>
+	<string>15A278</string>
+	<key>DTSDKName</key>
+	<string>macosx10.11</string>
+	<key>DTXcode</key>
+	<string>0711</string>
+	<key>DTXcodeBuild</key>
+	<string>7B1005</string>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>NSHumanReadableCopyright</key>
+	<string>markmatamoros</string>
+</dict>
+</plist>
